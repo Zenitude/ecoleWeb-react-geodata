@@ -12,6 +12,8 @@ export const GlobalStyle: any = createGlobalStyle`
     html, body, #root { 
         width: 100%;
         height: 100%;
+        background-color: #4b385f;
+        color: #f1f1f1;
     }
 `;
 
@@ -26,16 +28,11 @@ export const HomeContainer = styled.main`
 
 export const FlagsContainer = styled.div`
     width: 80%;
-    max-width: 1240px;
+    max-width: 860px;
     min-width: 260px;
     margin: auto;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
-
-    article {
-        width: 33%;
-        max-width: 320px;
-    }
+    gap: 20px;
 `;
