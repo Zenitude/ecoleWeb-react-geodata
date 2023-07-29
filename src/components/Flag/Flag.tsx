@@ -8,13 +8,13 @@ export default function Flag({datas, setInfos} : FlagProps) {
         e.preventDefault();
         const langs: string[] = [];
         for(const lang in languages) {
-            langs.push(lang);
+            langs.push(languages[lang]);
         }         
         setInfos({
             name: name.common,
             languages: langs.join(', '),
             capital : capital[0],
-            population: population,
+            population: population.toLocaleString(),
             showModal: true
         });
     }

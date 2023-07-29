@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from "react";
 import { HomeContainer, GlobalStyle, FlagsContainer } from "./Home.style";
 import { StyleSheetManager } from "styled-components";
@@ -23,6 +24,11 @@ export default function Home () {
         try {
             const response = await fetch(url);
             const data = await response.json();
+            data.sort((a : any,b: any) => {
+                if(a.name.common < b.name.common) { return -1 }
+                else if(a.name.common > b.name.common) { return 1 }
+                else { return 0 }
+            })
             setGeoData(data);
             console.log(geoData);
         } catch(error) {
