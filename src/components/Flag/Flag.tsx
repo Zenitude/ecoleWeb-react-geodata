@@ -6,7 +6,10 @@ export default function Flag({datas, setInfos} : FlagProps) {
     const { capital, flags, languages, name, population } = datas;
     const getIndex = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
         e.preventDefault();
-        const langs = Object.entries(languages).map(([key, value]) => value);       
+        const langs: string[] = [];
+        for(const lang in languages) {
+            langs.push(lang);
+        }         
         setInfos({
             name: name.common,
             languages: langs.join(', '),
